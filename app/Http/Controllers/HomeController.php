@@ -33,6 +33,7 @@ class HomeController extends Controller
     public function get_users_data()
     {
         $posts = Posts::with(['tags'])->get();
+        return view('home');
         dd($posts->toArray());
         $country = Country::with(['stateCities'])->find(1);
         dd($country->toArray());
